@@ -1,0 +1,53 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavBar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="mainNavBar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-item">
+                        More
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+
+                        {% for page in collections.pages %}
+                            <a href="{{ page.url | url }}" class="navbar-item">
+                                {{page.data.pagetitle}}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        {% for icon in icons.iconlist %}
+                            {% if loop.index !== (icons.iconlist.length) %}
+                                <span title="{{icon.title}}" class="icon is-medium mr-3">
+                                    <a href="{{icon.link}}">
+                                        <i class="{{icon.iconclass}}"></i>
+                                    </a>
+                                </span>
+                            {% else %}
+                                <span title="{{icon.title}}" class="icon is-medium">
+                                    <a href="{{icon.link}}">
+                                        <i class="{{icon.iconclass}}"></i>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

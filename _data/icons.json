@@ -1,0 +1,19 @@
+{
+  "iconlist": [
+    {
+      "title": "Github",
+      "iconclass": "fab fa-github fa-2x",
+      "link": "https://github.com/"
+    },
+    {
+      "title": "Linkedin",
+      "iconclass": "fab fa-linkedin fa-2x",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "title": "Email",
+      "iconclass": "far fa-envelope fa-2x",
+      "link": "#"
+    }
+  ]
+}

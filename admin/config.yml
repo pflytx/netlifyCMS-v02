@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "_site/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "settings"
+    label: "Settings"
+    files:
+      - file: "_data/variables.json"
+        label: "Variables"
+        name: "variables"
+        fields:
+        - { label: "Name", name: "name", widget: "string" }
+        - { label: "Subtitle", name: "subtitle", widget: "string" }
+        - label: "Homepage Section Group"
+          name: "homepageSectionGroup"
+          widget: "relation"
+          collection: "sections"
+          search_fields: ["sectionGroupName"]
+          value_field: "{{slug}}"
+          display_fields: ["sectionGroupName"]
+      - file: "stylevariables.json"
+        label: "Style"
+        name: "stylevariables"
+        fields:
+        - { label: "Primary", name: "primary", widget: "color" }
+        - { label: "Info", name: "info", widget: "color" }
+        - { label: "Success", name: "success", widget: "color" }
+        - { label: "Warning", name: "warning", widget: "color" }
+        - { label: "Danger", name: "danger", widget: "color" }
+        - { label: "Link", name: "link", widget: "color" }
+        - { label: "Body", name: "body", widget: "color" }
+      - file: "_data/icons.json"
+        label: "Icons Settings"
+        name: "iconlinks"
+        fields:
+        - label: "Icon"
+          name: "iconlist"
+          widget: "list"
+          fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Icon class", name: "iconclass", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+      - file: "_data/footer.json"
+        label: "Footer Settings"
+        name: "footersettings"
+        fields:
+        - { label: "Content", name: "footercontent", widget: "markdown" }
+  - name: "sections"
+    label: "Sections"
+    folder: "_data/sections"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: sectionGroupName
+    fields:
+    - label: "Section Group Name"
+      name: "sectionGroupName"
+      widget: "string"
+    - label: "Sections"
+      name: "sectionGroupList"
+      widget: "list"
+      required: false
+      types:
+      - label: "Basic"
+        name: "basic"
+        widget: "object"
+        fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Description", name: "description", widget: "string" }
+        - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Image Left"
+        name: "imageleft"
+        widget: "object"
+        fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Description", name: "description", widget: "string" }
+      - label: "Image Right"
+        name: "imageright"
+        widget: "object"
+        fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Description", name: "description", widget: "string" }
+        - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Four Columns"
+        name: "fourcolumns"
+        widget: "object"
+        fields:
+        - { label: "Column 1", name: "columnFirst", widget: "markdown" }
+        - { label: "Column 2", name: "columnSecond", widget: "markdown" }
+        - { label: "Column 3", name: "columnThird", widget: "markdown" }
+        - { label: "Column 4", name: "columnFour", widget: "markdown" }
+      - label: "Three Columns"
+        name: "threecolumns"
+        widget: "object"
+        fields:
+        - { label: "Column 1", name: "columnFirst", widget: "markdown" }
+        - { label: "Column 2", name: "columnSecond", widget: "markdown" }
+        - { label: "Column 3", name: "columnThird", widget: "markdown" }
+      - label: "Two Columns"
+        name: "twocolumns"
+        widget: "object"
+        fields:
+        - { label: "Column 1", name: "columnFirst", widget: "markdown" }
+        - { label: "Column 2", name: "columnSecond", widget: "markdown" }
+      - label: "Projects"
+        name: "recentprojects"
+        widget: "object"
+        fields:
+        - label: "Card"
+          name: "cardlist"
+          widget: "list"
+          fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "imagelink", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - label: "Tag"
+            name: "taglist"
+            widget: "list"
+            fields:
+            - { label: "Tag Text", name: "tagtext", widget: "string" }
+            - { label: "Tag Class", name: "tagclass", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
+      - { label: "Page Title", name: "pagetitle", widget: "string" }
+      - label: "Specified Section Group"
+        name: "sectionGroupList"
+        widget: "relation"
+        collection: "sections"
+        search_fields: ["sectionGroupName"]
+        value_field: "{{slug}}"
+        display_fields: ["sectionGroupName"]

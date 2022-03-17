@@ -1,0 +1,37 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            {% for card in activeComponent.cardlist %}
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header" title="{{card.title}}">
+                            <a href="{{card.link}}" class="card-header-title">
+                                {{card.title}}
+                            </a>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-image">
+                            <figure class="image is-2by1">
+                                <img src="{{card.imagelink}}" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="tags">
+                                {% for tag in card.taglist %}
+                                    <span class="tag {{tag.tagclass}} is-small">{{tag.tagtext}}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="content">
+                                {{ card.description | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

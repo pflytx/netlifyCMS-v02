@@ -1,0 +1,11 @@
+{
+  "sectionGroupName": "Personal Site Sections",
+  "sectionGroupList": [
+    {
+      "type": "basic",
+      "title": "Personal Site",
+      "body": "This personal portfolio site was a experiment/project itself; it was my first time using a 'headless' CMS and while it started as a side project, it expanded into a extendable website I can use for the foreseeable future (without having to edit the code directly!). TLDR it makes a static site into a dynamic site and for a personal website it proves to be a great use case. I can update my side projects, add new pages, update the color scheme, and more without having to really edit any code.",
+      "description": "Netlify + Eleventy = &#x2764;"
+    }
+  ]
+}

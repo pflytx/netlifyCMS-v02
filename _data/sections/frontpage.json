@@ -1,0 +1,70 @@
+{
+  "sectionGroupName": "Homepage Sections",
+  "sectionGroupList": [
+    {
+      "type": "recentprojects",
+      "cardlist": [
+        {
+          "title": "Personal Site",
+          "imagelink": "https://picsum.photos/320/160",
+          "link": "#",
+          "description": "Description block here",
+          "taglist": [
+            {
+              "tagtext": "Eleventy",
+              "tagclass": "is-primary"
+            },
+            {
+              "tagtext": "NetlifyCMS",
+              "tagclass": "is-link"
+            },
+            {
+              "tagtext": "Nunjucks",
+              "tagclass": "is-info"
+            }
+          ]
+        },
+        {
+          "title": "Personal Site",
+          "imagelink": "https://picsum.photos/320/160",
+          "link": "#",
+          "description": "Description block here",
+          "taglist": [
+            {
+              "tagtext": "Eleventy",
+              "tagclass": "is-primary"
+            },
+            {
+              "tagtext": "NetlifyCMS",
+              "tagclass": "is-link"
+            },
+            {
+              "tagtext": "Nunjucks",
+              "tagclass": "is-info"
+            }
+          ]
+        },
+        {
+          "title": "Personal Site",
+          "imagelink": "https://picsum.photos/320/160",
+          "link": "#",
+          "description": "Description block here",
+          "taglist": [
+            {
+              "tagtext": "Eleventy",
+              "tagclass": "is-primary"
+            },
+            {
+              "tagtext": "NetlifyCMS",
+              "tagclass": "is-link"
+            },
+            {
+              "tagtext": "Nunjucks",
+              "tagclass": "is-info"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

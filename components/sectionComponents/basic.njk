@@ -1,0 +1,13 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">{{activeComponent.title | safe }}</h1>
+        <h2 class="subtitle">
+            {{activeComponent.description | safe }}
+        </h2>
+        <div class="content">
+            {% markdown %}
+            {{activeComponent.body}}
+            {% endmarkdown %}
+        </div>
+    </div>
+</section>

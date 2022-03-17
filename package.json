@@ -1,0 +1,38 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --style=compressed scss:styles",
+    "watch:eleventy": "eleventy --serve",
+    "watch:sass": "npm run sass",
+    "gulp": "gulp",
+    "gulp:build": "gulp build",
+    "start": "set NODE_ENV=dev && npm-run-all --parallel gulp watch:*",
+    "build": "npm run gulp:build && eleventy && echo 'Site is built'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.2.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-json-data-to-sass": "^1.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "json-to-scss": "^1.6.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.4",
+    "bulma": "^0.9.1",
+    "gulp-json-sass": "0.0.2",
+    "marked": "^1.2.7",
+    "netlify-cms-widget-colorpicker": "^1.0.3",
+    "nunjucks-markdown": "^2.0.1",
+    "sass": "^1.32.2"
+  }
+}

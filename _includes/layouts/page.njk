@@ -1,0 +1,8 @@
+--- 
+layout: layouts/common.njk 
+---
+{% set sectionList = sections[sectionGroupList] %}
+{% import "components/sectionmapper.njk" as sm %}
+{% for section in sectionList.sectionGroupList %}
+    {{sm.sectionMapper(section)}}
+{% endfor %}

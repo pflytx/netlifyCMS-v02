@@ -1,0 +1,17 @@
+{% macro codebox(bodytext = ['text', 'text2']) %}
+    <div class="code-textbox-container">
+        <div class="button-container">
+            <div class="window-button close"></div>
+            <div class="window-button minimize"></div>
+            <div class="window-button zoom"></div>
+        </div>
+
+        <div class="code-textbox-inner is-family-code">
+            {% for text in bodytext %}
+            <div class="code-line">
+                <span class="code-line-carat">></span>{{text}}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

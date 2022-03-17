@@ -1,0 +1,31 @@
+@use 'bulma.scss' as bulma;
+
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: bulma.$body;
+
+  .portrait-image {
+    border: 2px solid bulma.$primary;
+  }
+  .footer-container {
+    background-color: bulma.$light;
+  }
+
+}
+body > footer {
+  margin-top: auto;
+}
+
+.occupation-description {
+  span {
+    font-style: italic;
+    font-size: bulma.$small-font-size;
+    &:before {
+      content: "\A";
+      white-space: pre;
+    }
+  }
+}

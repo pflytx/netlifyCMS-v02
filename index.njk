@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+pagetitle: "Page Title - Home"
+permalink: /
+---
+{% import "components/sectionmapper.njk" as sm %}
+{% include "components/header.njk" %}
+{% for section in sections[variables.homepageSectionGroup].sectionGroupList %}
+    {{sm.sectionMapper(section)}}
+{% endfor %}
